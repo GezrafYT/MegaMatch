@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:id="@+id/mainLayout"
-    android:background="@drawable/background">
+    android:id="@+id/loginPageLayout"
+    android:background="@drawable/galaxy1">
 
 
     <TextView
