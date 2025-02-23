@@ -34,17 +34,18 @@ public class loginPage extends AppCompatActivity {
     }
 
 
-    public void moveToScreen2(View view)
+    public void moveToTalmidLogin(View view)
     {
         Intent i1 = new Intent(this, talmidLogin.class);
         startActivity(i1);
     }
 
-    public void moveToScreen3(View view)
+    public void moveToRakazLogin(View view)
     {
         Intent i1 = new Intent(this, rakazLogin.class);
         startActivity(i1);
     }
+
 
 
 //    public void wait(int seconds)
