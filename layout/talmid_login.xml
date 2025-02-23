@@ -1,12 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/talmidLoginLayout"
-    android:background="@drawable/galaxy3">
+    android:background="@drawable/galaxy3"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/schoolIdInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="סימול ביהס"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="18sp"
+    android:backgroundTint="#FFC500"
+    android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="התחברות כתלמיד"
+        android:textColor="#FFC500"
+        android:layout_marginBottom="10dp"
+        android:textSize="30sp"
+        android:shadowColor="@color/black"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="10"
+        android:translationY="-210dp"/>
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="סיסמה"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:backgroundTint="#FFC500"
+        android:padding="10dp"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/talmidLoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="התחבר"
+        android:textSize="20sp"
+        android:backgroundTint="#6296FF"
+        android:layout_marginTop="20dp" />
+
 </LinearLayout>
