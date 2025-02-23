@@ -8,5 +8,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rakazLoginLayout"
-    android:background="@drawable/galaxy4">
+    android:background="@drawable/galaxy4"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="התחברות כרכז"
+        android:textColor="#FFC500"
+        android:layout_marginBottom="10dp"
+        android:textSize="30sp"
+        android:shadowColor="@color/black"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="10"
+        android:translationY="-100dp"/>
+
+    <EditText
+        android:id="@+id/schoolIDInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="סימול ביתס"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/schoolNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="שם ביתס"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="שם משתמש"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="סיסמה"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/rakazLoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="הירשם"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/noAccountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="אין לי חשבון רכז מקצוע"
+        android:textSize="12dp"
+        android:layout_marginTop="8dp" />
 </LinearLayout>
