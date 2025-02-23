@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#6296FF"
-        android:onClick="moveToScreen2"
+        android:onClick="moveToTalmidLogin"
         android:text="התחבר כתלמיד"
         android:textSize="22sp"
         android:translationY="-40dp"/>
@@ -62,7 +62,7 @@
         android:backgroundTint="#6296FF"
         android:text="התחבר כרכז מקצוע"
         android:textSize="22sp"
-        android:onClick="moveToScreen3"
+        android:onClick="moveToRakazLogin"
         android:layout_marginBottom="15dp"
         android:translationY="20dp"/>
 
