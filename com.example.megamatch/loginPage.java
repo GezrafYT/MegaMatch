@@ -1,6 +1,5 @@
 package com.example.megamatch;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,19 +11,14 @@ import android.widget.Toast;
 import android.content.Intent;
 import com.bumptech.glide.Glide;
 
-import android.widget.Button;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 
-
-
-public class MainActivity extends AppCompatActivity {
+public class loginPage extends AppCompatActivity {
     private ImageView image1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login_page);
 //        image1 = findViewById(R.id.image1);
 
         ImageView giraffeGif = findViewById(R.id.giraffeGif);
@@ -38,20 +32,20 @@ public class MainActivity extends AppCompatActivity {
     public void popMessage(View view) {
         Toast.makeText(this, "זוהי הודעה", Toast.LENGTH_LONG).show();
     }
-    
+
 
     public void moveToScreen2(View view)
     {
-        Intent i1 = new Intent(this, MainActivity2.class);
+        Intent i1 = new Intent(this, talmidLogin.class);
         startActivity(i1);
     }
 
     public void moveToScreen3(View view)
     {
-        Intent i1 = new Intent(this, MainActivity3.class);
+        Intent i1 = new Intent(this, rakazLogin.class);
         startActivity(i1);
     }
-    
+
 
 //    public void wait(int seconds)
 //    {
@@ -67,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 //        Button button = (Button) view;
 //        button.setTextColor(Color.rgb(255, 0, 0));
 //    }
-    
+
 //    public void moveToScreen3Delayed(View view)
 //    {
 //        wait(3000);
