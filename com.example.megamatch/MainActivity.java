@@ -34,23 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 .into(giraffeGif);
     }
 
-//    public void wait(int seconds)
-//    {
-//        try {
-//            Thread.sleep(seconds);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
+
     public void popMessage(View view) {
         Toast.makeText(this, "זוהי הודעה", Toast.LENGTH_LONG).show();
     }
-
-//    public void changeTextColor(View view)
-//    {
-//        Button button = (Button) view;
-//        button.setTextColor(Color.rgb(255, 0, 0));
-//    }
+    
 
     public void moveToScreen2(View view)
     {
@@ -63,7 +51,23 @@ public class MainActivity extends AppCompatActivity {
         Intent i1 = new Intent(this, MainActivity3.class);
         startActivity(i1);
     }
+    
 
+//    public void wait(int seconds)
+//    {
+//        try {
+//            Thread.sleep(seconds);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+//    public void changeTextColor(View view)
+//    {
+//        Button button = (Button) view;
+//        button.setTextColor(Color.rgb(255, 0, 0));
+//    }
+    
 //    public void moveToScreen3Delayed(View view)
 //    {
 //        wait(3000);
