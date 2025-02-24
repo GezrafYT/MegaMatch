@@ -59,7 +59,7 @@
         android:id="@+id/loginRakazButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#D427F8"
+        android:backgroundTint="#B41BD1"
         android:text="התחבר כרכז מקצוע"
         android:textSize="22sp"
         android:onClick="moveToRakazLogin"
