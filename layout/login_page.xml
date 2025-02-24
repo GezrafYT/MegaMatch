@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#419CE6"
+        android:backgroundTint="#07BD00"
         android:onClick="moveToTalmidLogin"
         android:text="התחבר כתלמיד"
         android:textSize="22sp"
