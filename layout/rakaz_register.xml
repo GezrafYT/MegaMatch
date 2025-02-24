@@ -78,15 +78,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text='מגמה?'
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"
-            android:textColor="#FFFFFF"/>
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="50dp"/>
 
         <Spinner
             android:id="@+id/megamaSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
+            android:background="#B3ABA9A9"
+            android:layout_marginTop="30dp"/>
 
     </LinearLayout>
 </FrameLayout>
