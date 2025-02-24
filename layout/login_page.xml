@@ -53,7 +53,7 @@
         android:onClick="moveToTalmidLogin"
         android:text="התחבר כתלמיד"
         android:textSize="22sp"
-        android:translationY="-40dp"/>
+/>
 
     <Button
         android:id="@+id/loginRakazButton"
@@ -64,7 +64,7 @@
         android:textSize="22sp"
         android:onClick="moveToRakazLogin"
         android:layout_marginBottom="15dp"
-        android:translationY="20dp"/>
+        android:translationY="70dp"/>
 
 <!--    <Button-->
 <!--        android:id="@+id/button4"-->
