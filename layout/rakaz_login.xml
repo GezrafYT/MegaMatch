@@ -23,7 +23,7 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="50dp">
+        android:padding="60dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -46,8 +46,11 @@
             android:inputType="number"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:backgroundTint="#FFC500"
-            android:padding="10dp"/>
+            android:backgroundTint="#FFFFFF"
+            android:padding="10dp"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"/>
+
 
         <EditText
             android:id="@+id/schoolNameInput"
@@ -57,8 +60,10 @@
             android:inputType="text"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:backgroundTint="#FFC500"
-            android:padding="10dp" />
+            android:backgroundTint="#FFFFFF"
+            android:padding="10dp"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"/>
 
         <EditText
             android:id="@+id/usernameInput"
@@ -68,8 +73,10 @@
             android:inputType="text"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:backgroundTint="#FFC500"
-            android:padding="10dp" />
+            android:backgroundTint="#FFFFFF"
+            android:padding="10dp"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"/>
 
         <EditText
             android:id="@+id/passwordInput"
@@ -79,17 +86,19 @@
             android:inputType="textPassword"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:backgroundTint="#FFC500"
-            android:padding="10dp" />
+            android:backgroundTint="#FFFFFF"
+            android:padding="10dp"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"/>
 
         <Button
             android:id="@+id/rakazLoginButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="הירשם"
             android:textSize="20sp"
             android:backgroundTint="#6296FF"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"/>
 
         <Button
             android:id="@+id/noAccountButton"
@@ -97,7 +106,7 @@
             android:layout_height="40dp"
             android:onClick="moveToRakazRegister"
             android:text="אין לי חשבון רכז מקצוע"
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>
