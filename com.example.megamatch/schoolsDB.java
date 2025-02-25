@@ -1,3 +1,5 @@
+// הקובץ הזה משומש לאחסון מבני נתונים שמנתחים את קובץ מסד הנתונים של בתי הספר בכלל הארץ
+
 package com.example.megamatch;
 
 import android.content.Context;
