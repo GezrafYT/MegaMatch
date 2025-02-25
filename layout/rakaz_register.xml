@@ -47,6 +47,8 @@
             android:layout_height="wrap_content"
             android:hint="שם מלא"
             android:inputType="text"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
             android:backgroundTint="#FFFFFF"
             android:background="@android:drawable/editbox_background"
             android:elevation="8dp"
@@ -58,6 +60,8 @@
             android:layout_height="wrap_content"
             android:hint="שם משתמש"
             android:inputType="text"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
             android:backgroundTint="#FFFFFF"
             android:background="@android:drawable/editbox_background"
             android:elevation="8dp"/>
@@ -69,6 +73,8 @@
             android:layout_height="wrap_content"
             android:hint="סיסמה"
             android:inputType="textPassword"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
             android:backgroundTint="#FFFFFF"
             android:background="@android:drawable/editbox_background"
             android:elevation="8dp"/>
@@ -79,6 +85,8 @@
             android:layout_height="wrap_content"
             android:hint="אשר סיסמה"
             android:inputType="textPassword"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
             android:backgroundTint="#FFFFFF"
             android:background="@android:drawable/editbox_background"
             android:elevation="8dp"/>
