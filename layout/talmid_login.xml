@@ -23,14 +23,13 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="50dp">
+        android:padding="60dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="70dp"
             android:text="התחברות כתלמיד"
             android:textColor="#FFC500"
-            android:layout_marginBottom="10dp"
             android:textSize="30sp"
             android:shadowColor="@color/black"
             android:shadowDx="3"
@@ -46,8 +45,9 @@
             android:inputType="number"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:backgroundTint="#FFC500"
-            android:padding="10dp"
+            android:backgroundTint="#FFFFFF"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"
 />
 
         <EditText
@@ -58,14 +58,15 @@
             android:inputType="textPassword"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:backgroundTint="#FFC500"
-            android:padding="10dp"
+            android:backgroundTint="#FFFFFF"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"
             android:layout_marginTop="10dp"
             />
 
         <Button
             android:id="@+id/talmidLoginButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="התחבר"
             android:textSize="20sp"
