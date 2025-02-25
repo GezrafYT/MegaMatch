@@ -46,8 +46,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="שם מלא"
-            android:backgroundTint="#FFC500"
             android:inputType="text"
+            android:backgroundTint="#FFFFFF"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"
             />
 
         <EditText
@@ -55,24 +57,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="שם משתמש"
-            android:backgroundTint="#FFC500"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:backgroundTint="#FFFFFF"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"/>
+
 
         <EditText
             android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="סיסמה"
-            android:backgroundTint="#FFC500"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:backgroundTint="#FFFFFF"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"/>
 
         <EditText
             android:id="@+id/confirmPasswordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="אשר סיסמה"
-            android:backgroundTint="#FFC500"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:backgroundTint="#FFFFFF"
+            android:background="@android:drawable/editbox_background"
+            android:elevation="8dp"/>
 
         <Spinner
             android:id="@+id/megamaSpinner"
