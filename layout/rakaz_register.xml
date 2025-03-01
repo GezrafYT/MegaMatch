@@ -49,6 +49,7 @@
             android:inputType="text"
             android:textColor="#000000"
             android:textColorHint="#000000"
+            android:textAlignment="center"
             android:backgroundTint="#FFFFFF"
             android:background="@android:drawable/editbox_background"
             android:elevation="8dp"
@@ -62,6 +63,7 @@
             android:inputType="text"
             android:textColor="#000000"
             android:textColorHint="#000000"
+            android:textAlignment="center"
             android:backgroundTint="#FFFFFF"
             android:background="@android:drawable/editbox_background"
             android:elevation="8dp"/>
@@ -75,6 +77,7 @@
             android:inputType="textPassword"
             android:textColor="#000000"
             android:textColorHint="#000000"
+            android:textAlignment="center"
             android:backgroundTint="#FFFFFF"
             android:background="@android:drawable/editbox_background"
             android:elevation="8dp"/>
@@ -87,6 +90,7 @@
             android:inputType="textPassword"
             android:textColor="#000000"
             android:textColorHint="#000000"
+            android:textAlignment="center"
             android:backgroundTint="#FFFFFF"
             android:background="@android:drawable/editbox_background"
             android:elevation="8dp"/>
@@ -96,6 +100,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"/>
+
+
+        <Button
+            android:id="@+id/rakazRegisterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="registerRakaz"
+            android:text="הירשם"
+            android:textSize="20sp"
+            android:backgroundTint="#6296FF"
+            android:layout_marginTop="16dp"/>
 
     </LinearLayout>
 </FrameLayout>
