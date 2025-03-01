@@ -33,7 +33,6 @@ public class rakazLogin extends AppCompatActivity {
         passwordInput = findViewById(R.id.passwordInput);
 
         // Make schoolNameInput non-editable
-        schoolNameInput.setFocusable(false);
         schoolNameInput.setFocusableInTouchMode(false);
 
         startSchoolIdChecker();
@@ -50,14 +49,14 @@ public class rakazLogin extends AppCompatActivity {
                     schoolsDB.School school = schoolsDB.getSchoolsMap().get(id);
                     if (school != null) {
                         String schoolName = school.getSchoolName();
-                        schoolNameInput.setHint("שם ביהס: " + schoolName);
+                        schoolNameInput.setHint(schoolName);
                     } else {
-                        schoolNameInput.setHint("שם ביהס: ");
+                        schoolNameInput.setHint("");
                     }
                 } else {
-                    schoolNameInput.setHint("שם ביהס: ");
+                    schoolNameInput.setHint("");
                 }
-                handler.postDelayed(this, 3000); // Run again after 3 seconds
+                handler.postDelayed(this, 2000); // Run again after 2 seconds
             }
         };
         handler.post(schoolNameUpdater);
