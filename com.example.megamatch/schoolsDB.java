@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class schoolsDB {
@@ -18,43 +19,38 @@ public class schoolsDB {
 
     // Call this method in an Activity to initialize the database
     public static void loadSchoolsFromCSV(Context context) {
-        schoolsMap.clear();  // Reset data to avoid duplicates
+        schoolsMap.clear();
 
         try (InputStream is = context.getResources().openRawResource(R.raw.schools);
              BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
 
             String line;
-            boolean firstLine = true;  // Skip header row
+            boolean firstLine = true;
 
             while ((line = reader.readLine()) != null) {
+                String[] columns = line.split(",");
+
                 if (firstLine) {
                     firstLine = false;
                     continue;
                 }
 
-                String[] columns = line.split(","); // Adjust if CSV uses a different delimiter
+                if (columns.length < 3) continue;
 
-                if (columns.length < 3) {
-                    Log.e("SchoolDB", "Skipping invalid line: " + line);
-                    continue;
-                }
+                String schoolIdStr = columns[0].replace("\uFEFF", "").trim();
 
                 try {
-                    int schoolId = Integer.parseInt(columns[1].trim());  // Ensure we're reading the **correct** column for ID
-                    String schoolName = columns[0].trim();  // School name
-                    String principalName = columns[2].trim();  // Principal's name
+                    int schoolId = Integer.parseInt(schoolIdStr);
+                    String schoolName = columns[1].trim();
+                    String principalName = columns[2].trim();
 
                     schoolsMap.put(schoolId, new School(schoolName, principalName));
 
-                } catch (NumberFormatException e) {
-                    Log.e("SchoolDB", "Skipping invalid school ID: " + columns[1].trim());  // Log actual invalid ID
-                }
+                } catch (NumberFormatException ignored) {}
             }
 
-            Log.d("SchoolDB", "Total schools loaded: " + schoolsMap.size());
-
         } catch (IOException e) {
-            Log.e("SchoolDB", "Error reading CSV file", e);
+            e.printStackTrace();
         }
     }
 
@@ -67,6 +63,10 @@ public class schoolsDB {
     public static int getTotalSchoolsCount()
     {
         return schoolsMap.size();
+    }
+
+    public static HashMap<Integer, School> getSchoolsMap() {
+        return schoolsMap;
     }
 
     // Inner class representing a school
