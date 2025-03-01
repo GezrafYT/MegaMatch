@@ -9,6 +9,8 @@ import android.widget.Toast;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.HashMap;
+
 public class rakazLogin extends AppCompatActivity {
 
     private EditText schoolIdInput, schoolNameInput, usernameInput, passwordInput;
@@ -21,34 +23,46 @@ public class rakazLogin extends AppCompatActivity {
         setContentView(R.layout.rakaz_login);
 
         schoolsDB.loadSchoolsFromCSV(this);
+//        HashMap<Integer, schoolsDB.School> schoolsMap = schoolsDB.getSchoolsMap();
 
-        // Debug: Print school count
-        Log.d("SchoolDB", "Total schools loaded: " + schoolsDB.getTotalSchoolsCount());
-
-        // Debug: Manually test if a school exists
-        schoolsDB.School testSchool = schoolsDB.getSchoolById(770826);
-        if (testSchool != null) {
-            Log.d("SchoolDB", "School Found: " + testSchool.getSchoolName());
-        } else {
-            Log.e("SchoolDB", "School ID 770826 NOT FOUND!");
-        }
+        Log.d("SchoolDB", "Total schools loaded: " + schoolsDB.getTotalSchoolsCount()); // Shows the total schools loaded from the database
 
         schoolIdInput = findViewById(R.id.schoolIDInput);
         schoolNameInput = findViewById(R.id.schoolNameInput);
         usernameInput = findViewById(R.id.usernameInput);
         passwordInput = findViewById(R.id.passwordInput);
+
+        // Make schoolNameInput non-editable
+        schoolNameInput.setFocusable(false);
+        schoolNameInput.setFocusableInTouchMode(false);
+
+        startSchoolIdChecker();
     }
 
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        handler.removeCallbacks(schoolNameUpdater);
+    private void startSchoolIdChecker() {
+        schoolNameUpdater = new Runnable() {
+            @Override
+            public void run() {
+                String schoolId = schoolIdInput.getText().toString();
+                if (schoolId.length() == 6 && schoolId.matches("\\d+")) { // אם מספר סימול ביהס בעל אורך של 6 ספרות
+                    int id = Integer.parseInt(schoolId);
+                    schoolsDB.School school = schoolsDB.getSchoolsMap().get(id);
+                    if (school != null) {
+                        String schoolName = school.getSchoolName();
+                        schoolNameInput.setHint("שם ביהס: " + schoolName);
+                    } else {
+                        schoolNameInput.setHint("שם ביהס: ");
+                    }
+                } else {
+                    schoolNameInput.setHint("שם ביהס: ");
+                }
+                handler.postDelayed(this, 3000); // Run again after 3 seconds
+            }
+        };
+        handler.post(schoolNameUpdater);
     }
 
-    public void registerRakaz(View view) {
-        Toast.makeText(this, "Registration button clicked", Toast.LENGTH_SHORT).show();
-    }
 
     public void moveToRakazRegister(View view) {
         Intent i1 = new Intent(this, rakazRegister.class);
