@@ -19,105 +19,104 @@
 
     <!-- Main Content Layout -->
     <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         android:padding="60dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:text="התחברות כרכז"
-            android:textColor="#FFC500"
             android:layout_marginBottom="10dp"
-            android:textSize="30sp"
             android:shadowColor="@color/black"
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="10"
-/>
+            android:text="התחברות כרכז"
+            android:textColor="#FFC500"
+            android:textSize="30sp" />
 
         <EditText
             android:id="@+id/schoolIDInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="סימול ביהס"
+            android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="8dp"
+            android:hint="סימול ביה''ס"
             android:inputType="number"
+            android:padding="10dp"
+            android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:backgroundTint="#FFFFFF"
-            android:padding="10dp"
-            android:background="@android:drawable/editbox_background"
-            android:elevation="8dp"/>
+            android:textSize="18sp" />
 
 
         <EditText
             android:id="@+id/schoolNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="שם ביהס: "
-            android:inputType="none"
-            android:textColor="#000000"
-            android:textColorHint="#000000"
-            android:textAlignment="viewEnd"
-            android:textSize="18sp"
-            android:backgroundTint="#B3FFFFFF"
-            android:padding="10dp"
             android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#B3FFFFFF"
+            android:clickable="false"
             android:elevation="8dp"
             android:focusable="false"
-            android:clickable="false"/>
+            android:hint="שם ביה''ס: "
+            android:inputType="none"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/usernameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="8dp"
             android:hint="שם משתמש"
             android:inputType="text"
+            android:padding="10dp"
+            android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
-            android:textAlignment="viewEnd"
-            android:textSize="18sp"
-            android:backgroundTint="#FFFFFF"
-            android:padding="10dp"
-            android:background="@android:drawable/editbox_background"
-            android:elevation="8dp"/>
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="8dp"
             android:hint="סיסמה"
             android:inputType="textPassword"
+            android:padding="10dp"
+            android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:backgroundTint="#FFFFFF"
-            android:padding="10dp"
-            android:background="@android:drawable/editbox_background"
-            android:elevation="8dp"/>
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/rakazLoginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="הירשם"
-            android:textSize="20sp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="#6296FF"
-            android:layout_marginTop="16dp"/>
+            android:text="הירשם"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/noAccountButton"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_marginTop="30dp"
             android:onClick="moveToRakazRegister"
             android:text="אין לי חשבון רכז מקצוע"
-            android:textSize="15dp"
-            android:layout_marginTop="30dp"/>
+            android:textSize="15dp" />
 
     </LinearLayout>
 </FrameLayout>
