@@ -60,7 +60,6 @@
             android:clickable="false"
             android:elevation="8dp"
             android:focusable="false"
-            android:hint="שם ביה''ס: "
             android:inputType="none"
             android:padding="10dp"
             android:textAlignment="center"
