@@ -71,12 +71,12 @@ public class talmidLogin extends AppCompatActivity {
                     schoolsDB.School school = schoolsDB.getSchoolsMap().get(id);
                     if (school != null) {
                         String schoolName = school.getSchoolName();
-                        schoolNameInput.setHint("שם ביהס: " + schoolName);
+                        schoolNameInput.setHint(schoolName);
                     } else {
-                        schoolNameInput.setHint("שם ביהס: ");
+                        schoolNameInput.setHint("");
                     }
                 } else {
-                    schoolNameInput.setHint("שם ביהס: ");
+                    schoolNameInput.setHint("");
                 }
                 handler.postDelayed(this, 3000); // Run again after 3 seconds
             }
