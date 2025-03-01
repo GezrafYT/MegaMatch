@@ -78,7 +78,7 @@ public class talmidLogin extends AppCompatActivity {
                 } else {
                     schoolNameInput.setHint("");
                 }
-                handler.postDelayed(this, 3000); // Run again after 3 seconds
+                handler.postDelayed(this, 2000); // Run again after 2 seconds
             }
         };
         handler.post(schoolNameUpdater);
