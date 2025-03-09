@@ -39,7 +39,7 @@
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="10"
-/>
+            />
 
         <EditText
             android:id="@+id/fullNameInput"
@@ -110,7 +110,8 @@
             android:text="הירשם"
             android:textSize="20sp"
             android:backgroundTint="#6296FF"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 </FrameLayout>
