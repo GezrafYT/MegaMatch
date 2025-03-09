@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class helpPage extends AppCompatActivity {
 
-    private Button page1Button, page2Button, page3Button;
+    private Button page1Button, page2Button, page3Button, page4Button, page5Button, page6Button;
     private TextFragment textFragment;
 
     @Override
@@ -19,6 +19,9 @@ public class helpPage extends AppCompatActivity {
         page1Button = findViewById(R.id.page1Button);
         page2Button = findViewById(R.id.page2Button);
         page3Button = findViewById(R.id.page3Button);
+        page4Button = findViewById(R.id.page4Button);
+        page5Button = findViewById(R.id.page5Button);
+        page6Button = findViewById(R.id.page6Button);
 
         // Initialize and add the TextFragment
         textFragment = new TextFragment();
@@ -31,5 +34,8 @@ public class helpPage extends AppCompatActivity {
         page1Button.setOnClickListener(v -> textFragment.updateText("Page 1"));
         page2Button.setOnClickListener(v -> textFragment.updateText("Page 2"));
         page3Button.setOnClickListener(v -> textFragment.updateText("Page 3"));
+        page4Button.setOnClickListener(v -> textFragment.updateText("Page 4"));
+        page5Button.setOnClickListener(v -> textFragment.updateText("Page 5"));
+        page6Button.setOnClickListener(v -> textFragment.updateText("Page 6"));
     }
 }
