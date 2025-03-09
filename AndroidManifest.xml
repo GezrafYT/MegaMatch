@@ -38,8 +38,5 @@
         <activity android:name=".rakazLogin" android:exported="true" />
         <activity android:name=".rakazRegister" android:exported="true" />
 
-        <!-- Fragments (if needed as activities) -->
-        <activity android:name=".TextFragment" android:exported="false" />
-
     </application>
 </manifest>
