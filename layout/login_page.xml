@@ -49,6 +49,7 @@
         <!--        android:onClick="changeTextColor"-->
         <!--        android:layout_marginBottom="15dp" />-->
 
+
         <Button
             android:id="@+id/loginTalmidButton"
             android:layout_width="wrap_content"
@@ -58,7 +59,7 @@
             android:onClick="moveToTalmidLogin"
             android:text="התחבר כתלמיד"
             android:textSize="22sp"
-            />
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/loginRakazButton"
@@ -68,8 +69,8 @@
             android:text="התחבר כרכז מקצוע"
             android:textSize="22sp"
             android:onClick="moveToRakazLogin"
-            android:layout_marginTop="50dp"/>
-
+            android:layout_marginTop="50dp"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/creditsButton"
@@ -79,7 +80,8 @@
             android:text="אודות"
             android:textSize="22sp"
             android:layout_marginTop="50dp"
-            android:translationX="70dp"/>
+            android:translationX="70dp"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/helpButton"
@@ -89,7 +91,9 @@
             android:text="עזרה"
             android:textSize="22sp"
             android:translationY="-51dp"
-            android:translationX="-70dp"/>
+            android:translationX="-70dp"
+            android:textColor="#FFFFFF" />
+
         <!--    <Button-->
         <!--        android:id="@+id/button4"-->
         <!--        android:layout_width="180dp"-->
