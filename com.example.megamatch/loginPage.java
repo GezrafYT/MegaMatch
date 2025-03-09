@@ -1,110 +1,126 @@
-package com.example.megamatch;
+<?xml version="1.0" encoding="utf-8"?>
 
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.view.View;
-
-import android.widget.ImageView;
-import android.widget.Toast;
-import android.content.Intent;
-import com.bumptech.glide.Glide;
-import android.Manifest;
-import androidx.core.app.ActivityCompat;
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
-public class loginPage extends AppCompatActivity {
-    private ImageView image1;
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/galaxy1"/>
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);
-//        image1 = findViewById(R.id.image1);
+    <!-- Blur Effect (Semi-Transparent Overlay) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#6E000000"/> <!-- Adjust transparency (AA = opacity) -->
 
-        ImageView giraffeGif = findViewById(R.id.giraffeGif);
-        Glide.with(this)
-                .asGif() // Ensure it’s loaded as a GIF
-                .load(R.drawable.giraffe_gif) // Load the GIF from the drawable
-                .into(giraffeGif);
-
-
-        if (!checkPermission(Manifest.permission.SEND_SMS)) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.SEND_SMS}, 1);
-        }
-    }
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/loginPageLayout">
 
 
-    public void popMessage(View view) {
-        Toast.makeText(this, "זוהי הודעה", Toast.LENGTH_LONG).show();
-    }
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MegaMatch"
+            android:textColor="#FFC500"
+            android:layout_marginBottom="120dp"
+            android:textSize="35sp"
+            android:shadowColor="@color/black"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="10" />
 
 
-    public void moveToTalmidLogin(View view)
-    {
-        Intent i1 = new Intent(this, talmidLogin.class);
-        startActivity(i1);
-    }
-
-    public void moveToRakazLogin(View view)
-    {
-        Intent i1 = new Intent(this, rakazLogin.class);
-        startActivity(i1);
-    }
+        <!--    <Button-->
+        <!--        android:id="@+id/textColorButton"-->
+        <!--        android:layout_width="180dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:backgroundTint="#6296FF"-->
+        <!--        android:text="Button 2"-->
+        <!--        android:textSize="22sp"-->
+        <!--        android:onClick="changeTextColor"-->
+        <!--        android:layout_marginBottom="15dp" />-->
 
 
-    public void moveToHelp(View view)
-    {
-        Intent i1 = new Intent(this, helpPage.class);
-        startActivity(i1);
-    }
+        <Button
+            android:id="@+id/loginTalmidButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#07BD00"
+            android:onClick="moveToTalmidLogin"
+            android:text="התחבר כתלמיד"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF" />
 
+        <Button
+            android:id="@+id/loginRakazButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1BA1B6"
+            android:text="התחבר כרכז מקצוע"
+            android:textSize="22sp"
+            android:onClick="moveToRakazLogin"
+            android:layout_marginTop="50dp"
+            android:textColor="#FFFFFF" />
 
-    public void moveToCredits(View view)
-    {
-        Intent i1 = new Intent(this, creditsPage.class);
-        startActivity(i1);
-    }
+        <Button
+            android:id="@+id/creditsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#000000"
+            android:text="אודות"
+            android:textSize="22sp"
+            android:onClick="moveToCredits"
+            android:layout_marginTop="50dp"
+            android:translationX="70dp"
+            android:textColor="#FFFFFF" />
 
+        <Button
+            android:id="@+id/helpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#000000"
+            android:text="עזרה"
+            android:textSize="22sp"
+            android:onClick="moveToHelp"
+            android:translationY="-51dp"
+            android:translationX="-70dp"
+            android:textColor="#FFFFFF" />
 
-    public boolean checkPermission(String permission)
-    {
-        int check = ContextCompat.checkSelfPermission(this, permission);
-        return (check == PackageManager.PERMISSION_GRANTED);
-    }
+        <!--    <Button-->
+        <!--        android:id="@+id/button4"-->
+        <!--        android:layout_width="180dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:backgroundTint="#6296FF"-->
+        <!--        android:text="Button 4"-->
+        <!--        android:textSize="22sp"-->
+        <!--        android:onClick="moveToScreen3Delayed"-->
+        <!--        android:layout_marginBottom="15dp" />-->
 
+        <!--    <Button-->
+        <!--        android:id="@+id/button5"-->
+        <!--        android:layout_width="180dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:backgroundTint="#6296FF"-->
+        <!--        android:text="Button 5"-->
+        <!--        android:textSize="22sp"-->
+        <!--        android:onClick="zoomImage"-->
+        <!--        android:layout_marginBottom="25dp"/>-->
 
+        <ImageView
+            android:id="@+id/giraffeGif"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/giraffe_gif"/>
 
-//    public void wait(int seconds)
-//    {
-//        try {
-//            Thread.sleep(seconds);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-//    public void changeTextColor(View view)
-//    {
-//        Button button = (Button) view;
-//        button.setTextColor(Color.rgb(255, 0, 0));
-//    }
-
-//    public void moveToScreen3Delayed(View view)
-//    {
-//        wait(3000);
-//        Intent i1 = new Intent(this, MainActivity3.class);
-//        startActivity(i1);
-//    }
-
-//    public void zoomImage(View view) {
-//        Animation zoomIn = AnimationUtils.loadAnimation(this, R.anim.zoom_in);
-//        image1.startAnimation(zoomIn);
-//    }
-
-
-}
+    </LinearLayout>
+</FrameLayout>
