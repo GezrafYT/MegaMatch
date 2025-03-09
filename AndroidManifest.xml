@@ -7,6 +7,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        
+        <activity android:name=".helpPage" android:exported="true"/>
+        <activity android:name=".creditsPage" android:exported="true"/>
         <activity android:name=".talmidLogin" android:exported="true"/>
         <activity android:name=".rakazLogin" android:exported="true"/>
         <activity android:name=".rakazRegister" android:exported="true"/>
