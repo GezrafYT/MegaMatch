@@ -47,6 +47,21 @@ public class loginPage extends AppCompatActivity {
     }
 
 
+    public void moveToHelp(View view)
+    {
+        Intent i1 = new Intent(this, helpPage.class);
+        startActivity(i1);
+    }
+
+
+    public void moveToCredits(View view)
+    {
+        Intent i1 = new Intent(this, creditsPage.class);
+        startActivity(i1);
+    }
+
+
+
 
 //    public void wait(int seconds)
 //    {
