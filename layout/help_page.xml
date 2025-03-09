@@ -5,26 +5,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/galaxy2"/>
+        android:src="@drawable/galaxy1"/>
 
     <!-- Blur Effect (Semi-Transparent Overlay) -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6E000000"/> <!-- Adjust transparency (AA = opacity) -->
+        android:background="#6E000000"/>
 
+    <!-- Fragment container to display step-by-step instructions -->
+    <FrameLayout
+        android:id="@+id/helpFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="60dp"/>
+
+    <!-- Page buttons at the bottom -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:id="@+id/helpPageLayout">
+        android:padding="10dp">
 
+        <Button
+            android:id="@+id/page1Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#444444"
+            android:text="1"
+            android:textColor="#FFFFFF"/>
 
+        <Button
+            android:id="@+id/page2Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#444444"
+            android:text="2"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/page3Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#444444"
+            android:text="3"
+            android:textColor="#FFFFFF"/>
+
+        <!-- Future buttons (commented) -->
+        <!--
+        <Button
+            android:id="@+id/page4Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#444444"
+            android:text="4"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/page5Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#444444"
+            android:text="5"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/page6Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#444444"
+            android:text="6"
+            android:textColor="#FFFFFF"/>
+        -->
     </LinearLayout>
 </FrameLayout>
