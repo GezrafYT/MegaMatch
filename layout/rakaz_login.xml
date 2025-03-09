@@ -106,7 +106,8 @@
             android:layout_marginTop="16dp"
             android:backgroundTint="#6296FF"
             android:text="הירשם"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/noAccountButton"
@@ -115,7 +116,8 @@
             android:layout_marginTop="30dp"
             android:onClick="moveToRakazRegister"
             android:text="אין לי חשבון רכז מקצוע"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 </FrameLayout>
