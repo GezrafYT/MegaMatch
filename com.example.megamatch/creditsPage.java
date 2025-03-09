@@ -33,7 +33,13 @@ public class creditsPage extends AppCompatActivity {
             whatsappIntent.setPackage("com.whatsapp"); // Set WhatsApp as an option if available
         }
 
+        Intent gmailIntent = new Intent(Intent.ACTION_SEND); // Generic send intent
+        gmailIntent.setType("text/plain");
+        gmailIntent.setPackage("com.google.android.gm"); // Set Gmail as an option
+
         Intent chooser = Intent.createChooser(whatsappIntent, "בחר אפליקציה"); // "Choose an app"
+        chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{gmailIntent}); // Add Gmail to chooser
+
         startActivity(chooser);
     }
 
