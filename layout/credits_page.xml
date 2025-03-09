@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Guy Shitrit ©"
+            android:text="גיא שטרית ©"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textAlignment="center"
