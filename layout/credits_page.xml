@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/galaxy1"/>
+
+    <!-- Blur Effect (Semi-Transparent Overlay) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#6E000000"/> <!-- Adjust transparency (AA = opacity) -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/creditsPageLayout"
+        android:padding="25dp">
+
+        <!-- App Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="אפליקציה זו היא פלטפורמה דיגיטלית שמטרתה לייעל את תהליך בחירת מגמות בבתי ספר תיכוניים. האפליקציה מאפשרת לרכזי מקצוע להזין ולנהל את רשימת המגמות, ולתלמידים לצפות בהן בקלות. המערכת עוזרת למנוע טעויות ושיבושים במידע, ומאפשרת תהליך מסודר ושקוף לכל המשתמשים."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:paddingBottom="30dp"/>
+
+        <!-- Creator Credit -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guy Shitrit ©"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:paddingBottom="20dp"/>
+
+        <!-- Contact Button -->
+        <Button
+            android:id="@+id/contactButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="צור קשר"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#007ACC"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- SMS and WhatsApp Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/smsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SMS"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4CAF50"
+                android:textSize="16sp"
+                android:layout_marginEnd="30dp"/>
+
+            <Button
+                android:id="@+id/whatsappButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="וואטסאפ"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#25D366"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
