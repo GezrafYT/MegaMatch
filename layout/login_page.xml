@@ -79,6 +79,7 @@
             android:backgroundTint="#000000"
             android:text="אודות"
             android:textSize="22sp"
+            android:onClick="moveToCredits"
             android:layout_marginTop="50dp"
             android:translationX="70dp"
             android:textColor="#FFFFFF" />
@@ -90,6 +91,7 @@
             android:backgroundTint="#000000"
             android:text="עזרה"
             android:textSize="22sp"
+            android:onClick="moveToHelp"
             android:translationY="-51dp"
             android:translationX="-70dp"
             android:textColor="#FFFFFF" />
