@@ -1,8 +1,10 @@
 package com.example.megamatch;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.view.View;
 
@@ -10,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.content.Intent;
 import com.bumptech.glide.Glide;
+import android.Manifest;
+import androidx.core.app.ActivityCompat;
 
 
 public class loginPage extends AppCompatActivity {
@@ -26,6 +30,12 @@ public class loginPage extends AppCompatActivity {
                 .asGif() // Ensure it’s loaded as a GIF
                 .load(R.drawable.giraffe_gif) // Load the GIF from the drawable
                 .into(giraffeGif);
+
+
+        if (!checkPermission(Manifest.permission.SEND_SMS)) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.SEND_SMS}, 1);
+        }
     }
 
 
@@ -60,6 +70,12 @@ public class loginPage extends AppCompatActivity {
         startActivity(i1);
     }
 
+
+    public boolean checkPermission(String permission)
+    {
+        int check = ContextCompat.checkSelfPermission(this, permission);
+        return (check == PackageManager.PERMISSION_GRANTED);
+    }
 
 
 
