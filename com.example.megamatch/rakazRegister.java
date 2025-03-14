@@ -42,7 +42,7 @@ public class rakazRegister extends AppCompatActivity {
         String megama = megamaSpinner.getSelectedItem().toString();
 
         if (!username.isEmpty() && !password.isEmpty()) {
-            String message = "פרטי הרכז\nUsername: " + username + "\nPassword: " + password + "\nMegama: " + megama;
+            String message = "Username: " + username + "\nMegama: " + megama;
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "נא למלא את כל השדות", Toast.LENGTH_SHORT).show();
