@@ -17,9 +17,7 @@ public class rakazLogin extends AppCompatActivity {
     private EditText schoolIdInput, schoolNameInput, usernameInput, passwordInput;
     private final Handler handler = new Handler();
     private Runnable schoolNameUpdater;
-
-    private Button rakazLoginButton = findViewById(R.id.rakazLoginButton);
-
+    private Button rakazLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +33,7 @@ public class rakazLogin extends AppCompatActivity {
         schoolNameInput = findViewById(R.id.schoolNameInput);
         usernameInput = findViewById(R.id.usernameInput);
         passwordInput = findViewById(R.id.passwordInput);
+        rakazLoginButton = findViewById(R.id.rakazLoginButton);
 
         // Make schoolNameInput non-editable
         schoolNameInput.setFocusableInTouchMode(false);
