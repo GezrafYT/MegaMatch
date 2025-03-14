@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.content.Intent;
@@ -16,6 +17,9 @@ public class rakazLogin extends AppCompatActivity {
     private EditText schoolIdInput, schoolNameInput, usernameInput, passwordInput;
     private final Handler handler = new Handler();
     private Runnable schoolNameUpdater;
+
+    private Button rakazLoginButton = findViewById(R.id.rakazLoginButton);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,25 @@ public class rakazLogin extends AppCompatActivity {
         schoolNameInput.setFocusableInTouchMode(false);
 
         startSchoolIdChecker();
+
+        // Handle login button click
+        rakazLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String schoolId = schoolIdInput.getText().toString().trim();
+                String password = passwordInput.getText().toString().trim();
+
+                if (!schoolId.isEmpty() && !password.isEmpty()) {
+                    if (schoolId.length() == 6 && schoolId.matches("\\d+")) {
+                        Toast.makeText(rakazLogin.this, "School ID: " + schoolId + "\nPassword: " + password, Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(rakazLogin.this, "נא להכניס מספר סימול ביהס קיים באורך 6 ספרות", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(rakazLogin.this, "נא למלא את כל השדות", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 
