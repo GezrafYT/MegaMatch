@@ -1,0 +1,5 @@
+<transition
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/galaxy3"></item>
+    <item android:drawable="@drawable/galaxy4"></item>
+</transition>
