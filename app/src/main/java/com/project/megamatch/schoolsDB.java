@@ -9,7 +9,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class schoolsDB {
 
@@ -67,10 +70,24 @@ public class schoolsDB {
         return schoolsMap;
     }
 
+    // Method to get all schools as a List with IDs
+    public static List<School> getAllSchools() {
+        List<School> schoolsList = new ArrayList<>();
+        for (Map.Entry<Integer, School> entry : schoolsMap.entrySet()) {
+            School school = entry.getValue();
+            // Create a school with ID
+            School schoolWithId = new School(school.getSchoolName(), school.getPrincipalName());
+            schoolWithId.setSchoolId(entry.getKey());
+            schoolsList.add(schoolWithId);
+        }
+        return schoolsList;
+    }
+
     // Inner class representing a school
     public static class School {
         private final String schoolName;
         private final String principalName;
+        private int schoolId;
 
         public School(String schoolName, String principalName) {
             this.schoolName = schoolName;
@@ -84,6 +101,18 @@ public class schoolsDB {
         public String getPrincipalName() {
             return principalName;
         }
-
+        
+        public void setSchoolId(int schoolId) {
+            this.schoolId = schoolId;
+        }
+        
+        public int getSchoolId() {
+            return schoolId;
+        }
+        
+        @Override
+        public String toString() {
+            return schoolName;
+        }
     }
 }

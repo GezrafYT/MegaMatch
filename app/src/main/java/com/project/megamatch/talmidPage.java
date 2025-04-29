@@ -23,7 +23,6 @@ public class talmidPage extends AppCompatActivity {
     private RecyclerView megamotRecyclerView;
     private SharedPreferences sharedPreferences;
     private String schoolId;
-    private String talmidId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +43,11 @@ public class talmidPage extends AppCompatActivity {
         // פתיחת העדפות המשתמש
         sharedPreferences = getSharedPreferences("MegaMatchPrefs", MODE_PRIVATE);
         
-        // קבלת נתוני המשתמש המחובר
+        // קבלת נתוני בית הספר
         schoolId = sharedPreferences.getString("loggedInSchoolId", "");
-        talmidId = sharedPreferences.getString("loggedInTalmidId", "");
         
         // בדיקת תקינות נתונים
-        if (schoolId.isEmpty() || talmidId.isEmpty()) {
+        if (schoolId.isEmpty()) {
             goToLoginScreen();
             return;
         }
@@ -75,14 +73,14 @@ public class talmidPage extends AppCompatActivity {
             }
         });
         
-        // טעינת מגמות התלמיד
-        loadTalmidMegamot();
+        // טעינת מגמות בית הספר
+        loadSchoolMegamot();
     }
     
     // טעינת מגמות מהשרת
-    private void loadTalmidMegamot() {
+    private void loadSchoolMegamot() {
         // TODO: טעינת נתוני מגמות מפיירבייס
-        Log.d("TalmidPage", "Loading megamot for talmid: " + talmidId + " from school: " + schoolId);
+        Log.d("TalmidPage", "Loading all megamot for school: " + schoolId);
     }
     
     // התנתקות מהמערכת

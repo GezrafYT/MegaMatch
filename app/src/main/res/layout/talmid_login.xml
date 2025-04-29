@@ -29,86 +29,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="התחברות כתלמיד"
+                android:text="צפה במגמות ביה''ס"
                 android:textAppearance="@style/TextAppearance.MegaMatch.HeadlineMedium"
                 android:layout_marginBottom="32dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/schoolIdInputLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:hint="סימול ביה''ס"
-                app:hintEnabled="true"
-                app:startIconDrawable="@drawable/ic_school_sized"
-                app:hintAnimationEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/schoolIdInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textAlignment="center"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/schoolNameInputLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:hint="שם ביה''ס"
-                android:enabled="false"
-                app:hintEnabled="true"
-                app:startIconDrawable="@drawable/ic_school_sized"
-                app:hintAnimationEnabled="true"
-                app:expandedHintEnabled="false">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/schoolNameInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:textAlignment="center"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/talmidIDInputLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:startIconDrawable="@drawable/ic_id_card"
-                android:hint="מספר תעודה מזהה">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/talmidIDInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textAlignment="center"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordInputLayout"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:id="@+id/schoolAutocompleteLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
-                android:hint="סיסמה"
-                app:startIconDrawable="@drawable/ic_lock"
-                app:endIconMode="password_toggle">
+                android:hint="שם ביה''ס"
+                app:startIconDrawable="@drawable/ic_school_sized"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passwordInput"
+                <AutoCompleteTextView
+                    android:id="@+id/schoolAutocomplete"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:textAlignment="center"/>
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:imeOptions="actionDone"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -116,7 +58,7 @@
                 android:id="@+id/talmidLoginButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="התחבר"
+                android:text="צפה במגמות"
                 android:textSize="16sp"
                 app:icon="@drawable/ic_login_door"
                 app:iconGravity="textStart"
@@ -127,5 +69,51 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+    <!-- Loading Overlay -->
+    <FrameLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#70000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        android:elevation="10dp"
+        android:alpha="0.9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:padding="16dp">
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+                
+                <ProgressBar
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="אנא המתן..."
+                    android:textAppearance="@style/TextAppearance.MegaMatch.BodyMedium"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

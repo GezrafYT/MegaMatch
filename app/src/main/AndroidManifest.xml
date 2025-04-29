@@ -53,6 +53,11 @@
             android:exported="true" />
 
         <activity
+            android:name=".LoadingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MegaMatch" />
+            
+        <activity
             android:name=".rakazPage"
             android:exported="true" />
             
@@ -71,6 +76,12 @@
         <activity
             android:name=".MegamaPreview"
             android:exported="true" />
+            
+        <activity
+            android:name=".AdminRakazEmailsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.MegaMatch" />
             
         <!-- FileProvider for camera functionality -->
         <provider

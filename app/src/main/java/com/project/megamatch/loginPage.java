@@ -33,15 +33,6 @@ public class loginPage extends AppCompatActivity {
             return insets;
         });
 
-//        image1 = findViewById(R.id.image1);
-
-        ImageView giraffeGif = findViewById(R.id.giraffeGif);
-        Glide.with(this)
-                .asGif() // Ensure it’s loaded as a GIF
-                .load(R.drawable.giraffe_gif) // Load the GIF from the drawable
-                .into(giraffeGif);
-
-
         if (!checkPermission(Manifest.permission.SEND_SMS)) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.SEND_SMS}, 1);
@@ -81,34 +72,5 @@ public class loginPage extends AppCompatActivity {
         int check = ContextCompat.checkSelfPermission(this, permission);
         return (check == PackageManager.PERMISSION_GRANTED);
     }
-
-
-//    public void wait(int seconds)
-//    {
-//        try {
-//            Thread.sleep(seconds);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-//    public void changeTextColor(View view)
-//    {
-//        Button button = (Button) view;
-//        button.setTextColor(Color.rgb(255, 0, 0));
-//    }
-
-//    public void moveToScreen3Delayed(View view)
-//    {
-//        wait(3000);
-//        Intent i1 = new Intent(this, MainActivity3.class);
-//        startActivity(i1);
-//    }
-
-//    public void zoomImage(View view) {
-//        Animation zoomIn = AnimationUtils.loadAnimation(this, R.anim.zoom_in);
-//        image1.startAnimation(zoomIn);
-//    }
-
 
 }

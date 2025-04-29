@@ -5,7 +5,8 @@
     android:id="@+id/loginPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/login_gradient_background"
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/titleTextView"
@@ -51,7 +52,7 @@
                 android:id="@+id/loginTalmidButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="התחבר כתלמיד"
+                android:text="צפה במגמות ביה''ס"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp"
@@ -120,14 +121,5 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-    <ImageView
-        android:id="@+id/giraffeGif"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/giraffe_gif"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

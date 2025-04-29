@@ -1,0 +1,17 @@
+-Xms512m
+-Xmx5120m
+-XX:ReservedCodeCacheSize=512m
+-XX:+UseG1GC
+-XX:SoftRefLRUPolicyMSPerMB=50
+-XX:CICompilerCount=2
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Djna.nosys=true
+-Djna.boot.library.path=
+-Didea.vendor.name=JetBrains
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-ea
+-Didea.fus.initial.consent=third.party
+-Didea.login.url.set.default=true
+-Didea.plugins.keepLoaded=true 

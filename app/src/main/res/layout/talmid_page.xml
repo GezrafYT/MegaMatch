@@ -5,7 +5,7 @@
     android:id="@+id/talmidPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/login_gradient_background">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="כאן יוצגו המגמות הזמינות לך"
+                android:text="כאן תוצג רשימת המגמות של בית הספר"
                 android:textAppearance="@style/TextAppearance.MegaMatch.BodyLarge"
                 android:layout_marginBottom="16dp"/>
 
@@ -55,7 +55,7 @@
         android:id="@+id/logoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="התנתק"
+        android:text="חזור"
         android:textSize="14sp"
         android:layout_margin="16dp"
         app:icon="@drawable/ic_logout"

@@ -47,4 +47,9 @@
     <color name="text_secondary_light">#99000000</color>
     <color name="text_primary_dark">#DEFFFFFF</color>
     <color name="text_secondary_dark">#99FFFFFF</color>
+    
+    <!-- New colors -->
+    <color name="green_700">#388E3C</color>
+    <color name="blue_700">#1976D2</color>
+    <color name="red_700">#D32F2F</color>
 </resources>

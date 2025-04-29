@@ -52,6 +52,18 @@
                 android:layout_marginBottom="32dp"
                 style="@style/Widget.MegaMatch.Button"/>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/manageRakazEmailsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ניהול רכזי מקצוע"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                app:icon="@drawable/ic_admin"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                style="@style/Widget.MegaMatch.Button.Outlined"/>
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

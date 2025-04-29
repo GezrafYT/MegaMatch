@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ public class rakazPage extends AppCompatActivity {
     private Button manageMegamaButton;
     private Button viewMegamaButton;
     private Button logoutButton;
+    private Button manageRakazEmailsButton;
     private SharedPreferences sharedPreferences;
     private FirebaseFirestore fireDB;
     private String schoolId;
@@ -46,6 +48,7 @@ public class rakazPage extends AppCompatActivity {
         manageMegamaButton = findViewById(R.id.manageMegamaButton);
         viewMegamaButton = findViewById(R.id.viewMegamaButton);
         logoutButton = findViewById(R.id.logoutButton);
+        manageRakazEmailsButton = findViewById(R.id.manageRakazEmailsButton);
         
         // אתחול פיירבייס
         fireDB = FirebaseFirestore.getInstance();
@@ -69,9 +72,7 @@ public class rakazPage extends AppCompatActivity {
         loadRakazDetails();
         
         // הגדרת כפתורים
-        manageMegamaButton.setOnClickListener(v -> manageMegama());
-        viewMegamaButton.setOnClickListener(v -> viewMegama());
-        logoutButton.setOnClickListener(v -> logoutRakaz());
+        initializeViews();
     }
     
     @Override
@@ -79,6 +80,26 @@ public class rakazPage extends AppCompatActivity {
         super.onResume();
         // Check if megama status has changed when returning to this activity
         loadRakazDetails();
+    }
+    
+    private void initializeViews() {
+        welcomeText = findViewById(R.id.welcomeText);
+        manageMegamaButton = findViewById(R.id.manageMegamaButton);
+        viewMegamaButton = findViewById(R.id.viewMegamaButton);
+        logoutButton = findViewById(R.id.logoutButton);
+        manageRakazEmailsButton = findViewById(R.id.manageRakazEmailsButton);
+        
+        // Set button click listeners
+        manageMegamaButton.setOnClickListener(v -> manageMegama());
+        viewMegamaButton.setOnClickListener(v -> viewMegama());
+        logoutButton.setOnClickListener(v -> logoutRakaz());
+        manageRakazEmailsButton.setOnClickListener(v -> openRakazEmailsManagement());
+        
+        // Initially disable view megama button until we check if the rakaz has a megama
+        viewMegamaButton.setEnabled(false);
+        
+        // Check for admin privileges
+        checkAdminStatus();
     }
     
     // פונקציה לטעינת פרטי הרכז
@@ -243,5 +264,36 @@ public class rakazPage extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.apply();
+    }
+
+    // Check if the rakaz user has admin privileges
+    private void checkAdminStatus() {
+        fireDB.collection("schools").document(schoolId)
+              .collection("rakazim").document(username)
+              .get()
+              .addOnSuccessListener(documentSnapshot -> {
+                  if (documentSnapshot.exists()) {
+                      Boolean isAdmin = documentSnapshot.getBoolean("isAdmin");
+                      if (isAdmin != null && isAdmin) {
+                          // Show admin button for managing rakaz emails
+                          manageRakazEmailsButton.setVisibility(View.VISIBLE);
+                      } else {
+                          manageRakazEmailsButton.setVisibility(View.GONE);
+                      }
+                  } else {
+                      manageRakazEmailsButton.setVisibility(View.GONE);
+                  }
+              })
+              .addOnFailureListener(e -> {
+                  Log.e("RakazPage", "Error checking admin status: " + e.getMessage());
+                  manageRakazEmailsButton.setVisibility(View.GONE);
+              });
+    }
+
+    // Open the admin page for managing rakaz emails
+    private void openRakazEmailsManagement() {
+        Intent intent = new Intent(this, AdminRakazEmailsActivity.class);
+        intent.putExtra("schoolId", schoolId);
+        startActivity(intent);
     }
 }

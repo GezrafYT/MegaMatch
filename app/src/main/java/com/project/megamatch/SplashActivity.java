@@ -58,7 +58,8 @@ public class SplashActivity extends AppCompatActivity {
             // Prepare the animation set
             AnimatorSet animSet = new AnimatorSet();
             animSet.playTogether(logoFadeOut, textFadeOut);
-            animSet.setDuration(400); // 1 second faster fade-out
+            animSet.setDuration(900); // Increased to 900ms (0.9 seconds) for a smoother fade-out
+            animSet.setInterpolator(new android.view.animation.DecelerateInterpolator(1.5f)); // Smoother deceleration
             
             // Add listener to navigate when animation completes
             animSet.addListener(new android.animation.AnimatorListenerAdapter() {
