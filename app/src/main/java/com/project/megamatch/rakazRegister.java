@@ -73,7 +73,6 @@ public class rakazRegister extends AppCompatActivity {
         setupSchoolAutocomplete();
     }
 
-    // Setup school autocomplete
     private void setupSchoolAutocomplete() {
         // קבלת רשימת בתי הספר מהמסד
         allSchools = schoolsDB.getAllSchools();
@@ -128,7 +127,7 @@ public class rakazRegister extends AppCompatActivity {
         });
     }
 
-    // Custom adapter for school autocomplete
+    // מתאם מותאם עם פונקציית סינון מותאמת
     private class SchoolAdapter extends ArrayAdapter<schoolsDB.School> implements Filterable {
         private List<schoolsDB.School> originalList;
         private List<schoolsDB.School> filteredList;
@@ -197,7 +196,7 @@ public class rakazRegister extends AppCompatActivity {
                 }
             };
         }
-
+        
         @Override
         public View getView(int position, View convertView, android.view.ViewGroup parent) {
             View view = super.getView(position, convertView, parent);
@@ -247,7 +246,11 @@ public class rakazRegister extends AppCompatActivity {
                 TextUtils.isEmpty(lastName) || TextUtils.isEmpty(email) ||
                 TextUtils.isEmpty(username) || TextUtils.isEmpty(password) ||
                 TextUtils.isEmpty(confirmPassword)) {
-            Toast.makeText(this, "נא למלא את כל השדות", Toast.LENGTH_SHORT).show();
+            if (selectedSchool == null) {
+                Toast.makeText(this, "נא לבחור בית ספר", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "נא למלא את כל השדות", Toast.LENGTH_SHORT).show();
+            }
             return false;
         }
 
@@ -367,15 +370,19 @@ public class rakazRegister extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(rakazRegister.this, "הרשמה בוצעה בהצלחה!", Toast.LENGTH_SHORT).show();
                     
-                    // מעבר למסך ההתחברות
-                    Intent intent = new Intent(rakazRegister.this, rakazLogin.class);
-                    startActivity(intent);
-                    finish();
+                    // מעבר למסך הבא
+                    goToLoginScreen();
                 })
                 .addOnFailureListener(e -> {
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(rakazRegister.this, "שגיאה בעדכון סטטוס הרשמה: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    Log.e(TAG, "Error updating email registration status: " + e.getMessage());
+                    Log.e(TAG, "Error updating registration status: " + e.getMessage());
                 });
+    }
+
+    private void goToLoginScreen() {
+        Intent intent = new Intent(this, rakazLogin.class);
+        startActivity(intent);
+        finish();
     }
 }

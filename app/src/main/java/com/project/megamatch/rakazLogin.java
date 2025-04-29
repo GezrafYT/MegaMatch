@@ -72,8 +72,6 @@ public class rakazLogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String currentText = schoolAutocomplete.getText().toString().trim();
-                String password = passwordInput.getText().toString().trim();
-                String username = usernameInput.getText().toString().trim();
                 
                 // Double-check if text matches a school name but selectedSchool isn't set
                 if (selectedSchool == null && !currentText.isEmpty()) {
@@ -91,10 +89,12 @@ public class rakazLogin extends AppCompatActivity {
                         selectedSchool = schoolsDB.getSchoolById(schoolId);
                     }
                 }
+                
+                String password = passwordInput.getText().toString().trim();
+                String username = usernameInput.getText().toString().trim();
 
                 if (selectedSchool != null && !password.isEmpty() && !username.isEmpty()) {
                     String schoolId = String.valueOf(selectedSchool.getSchoolId());
-                    
                     fireDB.collection("schools").document(schoolId)
                             .collection("rakazim").document(username)
                             .get()
@@ -131,7 +131,6 @@ public class rakazLogin extends AppCompatActivity {
         });
     }
 
-    // Setup school autocomplete
     private void setupSchoolAutocomplete() {
         // קבלת רשימת בתי הספר מהמסד
         allSchools = schoolsDB.getAllSchools();
@@ -186,7 +185,7 @@ public class rakazLogin extends AppCompatActivity {
         });
     }
 
-    // Custom adapter for school autocomplete
+    // מתאם מותאם עם פונקציית סינון מותאמת
     private class SchoolAdapter extends ArrayAdapter<schoolsDB.School> implements Filterable {
         private List<schoolsDB.School> originalList;
         private List<schoolsDB.School> filteredList;
@@ -255,7 +254,7 @@ public class rakazLogin extends AppCompatActivity {
                 }
             };
         }
-
+        
         @Override
         public View getView(int position, View convertView, android.view.ViewGroup parent) {
             View view = super.getView(position, convertView, parent);
@@ -276,6 +275,7 @@ public class rakazLogin extends AppCompatActivity {
             goToNextScreen();
         }
     }
+
 
     private void saveRakazSession(String schoolId, String username) {
         // Save session data in SharedPreferences

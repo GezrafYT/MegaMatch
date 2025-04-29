@@ -30,11 +30,6 @@ android {
     buildFeatures {
         viewBinding true
     }
-    
-    dexOptions {
-        javaMaxHeapSize "5g"
-        preDexLibraries true
-    }
 }
 
 dependencies {
